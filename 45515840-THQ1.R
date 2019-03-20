@@ -21,7 +21,16 @@ dataset
 (c)
 plot(dataset$time,dataset$gdp,main = "Singapore GDP growth",xlab = "Time",ylab = "GDP(%)")
 (d)
-
+x1<- mean(subset(dataset,period==1)$gdp, trim=0.10)
+y1<-sd(subset(dataset,period==1)$gdp)
+x2<- mean(subset(dataset,period==2)$gdp, trim=0.10)
+y2<-sd(subset(dataset,period==2)$gdp)
+x3<- mean(subset(dataset,period==3)$gdp, trim=0.10)
+y3<-sd(subset(dataset,period==3)$gdp)
+stat.table<-matrix(c(x1,y1,x2,y2,x3,y3),3,2)
+colnames(stat.table)<-c("mean","standard deviation")
+rownames(stat.table)<-c("per1","per2","per3")
+stat.table
 (e)
 pairs(dataset[,-(1:2)])
 (f)
