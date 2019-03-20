@@ -6,9 +6,11 @@ Coupon=C
 Face value=F
 e=2.71828
 The number of coupon payments=n
+# C is paid every 6 months
+tn=n/2
 y=c(y(0.5),y(1),y(1.5),...,y(tn))
-j=seq(0.5,n,by=0.5)
-P=sum(C*e^-(y*j))+F*e^-(y(tn)*n)
+tj=seq(0.5,tn,by=0.5)
+P=sum(C*e^-(y*tj))+F*e^-(y(tn)*tn)
 #Question 3
 (a)
 dataset=read.csv(file.choose())
@@ -26,7 +28,7 @@ pairs(dataset[,-(1:2)])
 lm(dataset$exp~dataset$gdp)
 summary(lm(dataset$exp~dataset$gdp))
 According to the result which represents the relationship between export growth rate and GDP,  we have the simple linear regression:
-  predicted GDP = -0.9336+1.5092x (x:export growth rate)
+  predicted GDP = -0.9336+1.5092 x (x:export growth rate)
 In addition F(1, 108) = 43.66, p = 1.524e-09 and exp assumes 28.13% of the variability in GDP
 (g)
 G=lm(dataset$exp+dataset$epg+dataset$hpr+dataset$gdpus+dataset$oil+dataset$crd~dataset$gdp)
