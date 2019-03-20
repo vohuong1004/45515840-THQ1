@@ -6,9 +6,9 @@ Coupon=C
 Face value=F
 e=2.71828
 The number of coupon payments=n
-y=c(y(0.5),y(1),y(1.5),...,y(n))
+y=c(y(0.5),y(1),y(1.5),...,y(tn))
 j=seq(0.5,n,by=0.5)
-P=sum(C*e^-(y*j))+F*e^-(y(n)*n)
+P=sum(C*e^-(y*j))+F*e^-(y(tn)*n)
 #Question 3
 (a)
 dataset=read.csv(file.choose())
